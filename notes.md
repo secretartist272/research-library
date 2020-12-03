@@ -13,4 +13,32 @@
         #>Search for other users research by subject
         #> Must be ableto add further commentary to other users research
 
+    #-What will yoour models be?
+        #>User
+        #>Research
+        #>Subject
+
+    #-What are your associations?
+        #> User-->Subject<--->Research
+
+    #-What are all the possible views for my app?
+        #>User
+            #=index
+            #=edit
+            #=create
+            #=show
+            #=new
+
+        #>Subject
+            #=index
+            #=show
+            #=create
+            #=new
+
+        #>Research
+            #=index
+            #=show
+            #=create
+            #=new
+            #=edit
     

@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   #homepage
   get 'home', to: 'sessions#home'
+  get '/signup', to: 'sessions#signup'
+  get 'login', to: 'sessions#login'
 end

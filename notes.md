@@ -24,10 +24,10 @@
             title 
             description
 
-        #>Subject
+        #>Research Subject
             user_id
             research_id
-            genre
+            subject
             
     #-What are your associations?
         #> User-->Subject<--->Research

@@ -1,0 +1,2 @@
+module ResearchSubjectsHelper
+end

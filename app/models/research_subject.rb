@@ -1,0 +1,2 @@
+class ResearchSubject < ApplicationRecord
+end

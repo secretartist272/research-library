@@ -15,9 +15,20 @@
 
     #-What will yoour models be?
         #>User
-        #>Research
-        #>Subject
+            name
+            age
+            email
+            password
 
+        #>Research
+            title 
+            description
+
+        #>Subject
+            user_id
+            research_id
+            genre
+            
     #-What are your associations?
         #> User-->Subject<--->Research
 

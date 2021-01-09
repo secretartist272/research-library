@@ -4,13 +4,15 @@
 
     <%= f.label :email %>
     <%= f.email_field :email%>
-    
+    <br>
     <%= f.label :name %>
     <%= f.text_field :name %>
-    
+    <br>
     <%= f.label :age %>
     <%= f.number_field :age %>
-    
-    <%= f.label :passwword_digest %>
-    <%= f.passwword_field :password_digest %>
+    <br>
+    <%= f.label :password %>
+    <%= f.password_field :password_digest %>
+    <br>
+    <%= f.submit %>
 <% end %>

@@ -22,12 +22,21 @@ class SessionsController < ApplicationController
 
     #user login
     def login
+        @user = User. new 
+    end
+
+    def new
 
     end
 
      #homepage
     def home
         render "homepage"
+    end
+
+    #logout 
+    def logout
+        
     end
 
     private

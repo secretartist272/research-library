@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         @user = User.new(strong_params)
 
 
-        if user.save
+        if @user.save
             flash[:notice] = "Safely created User account"
             sessions[:user_id] = @user.id
             redirect_to research_path
@@ -26,7 +26,9 @@ class SessionsController < ApplicationController
     end
 
     def new
+        @user = User.find_by(email: params[:user][:email])
 
+        if @user.authnticate
     end
 
      #homepage

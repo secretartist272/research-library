@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   
   #login routes
   get '/login', to: 'sessions#login'
-  post '/sucess', to: 'sessions#new'
+  post '/success', to: 'sessions#new'
 
   #Logout route
   get '/logout', to: 'sessions#logout'

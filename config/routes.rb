@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :researches
   resources :users
   #homepage
-  get 'home', to: 'sessions#home'
+  get '/', to: 'sessions#home'
   get '/signup', to: 'sessions#signup'
   post '/create', to: 'sessions#create'
   get 'login', to: 'sessions#login'

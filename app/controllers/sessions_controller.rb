@@ -36,7 +36,8 @@ class SessionsController < ApplicationController
 
     #logout 
     def logout
-        
+        sessions.clear
+        reedirect_to home_path
     end
 
     private

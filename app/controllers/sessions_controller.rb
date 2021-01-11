@@ -26,9 +26,20 @@ class SessionsController < ApplicationController
     end
 
     def new
+        #find user
         @user = User.find_by(email: params[:user][:email])
 
-        if @user.authnticate
+        #if user is found
+        if @user && @user.authenticate(strong_params[:password])
+            flash[:notice] = "You have successfully logged in"
+            session[:user_id] = @User.id
+            reddirect_to root_path
+        #if user isn't found
+        else
+            flash[:errors] = @user.errors.full_messages
+            @user = User.new(username: strong_params[:username]
+            render :login
+        end
     end
 
      #homepage

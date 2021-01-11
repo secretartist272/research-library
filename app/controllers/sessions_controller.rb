@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
     #create user
     def create
-        @user = User.new(stong_params)
+        @user = User.new(strong_params)
 
 
         if user.save

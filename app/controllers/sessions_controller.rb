@@ -37,8 +37,8 @@ class SessionsController < ApplicationController
         #if user isn't found
         else
             flash[:errors] = @user.errors.full_messages
-            @user = User.new(username: strong_params[:username]
-            render :login
+            @user = User.new(username: strong_params[:username])
+            redirect_to root_path
         end
     end
 
@@ -50,7 +50,7 @@ class SessionsController < ApplicationController
     #logout 
     def logout
         sessions.clear
-        reedirect_to home_path
+        redirect_to root_path
     end
 
     private

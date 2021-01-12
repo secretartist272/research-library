@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :research_subjects
   resources :researches
-  resources :users
+  resources :users, only: [:show, :edit]
   
   #root path
   root 'sessions#home'

@@ -33,11 +33,11 @@ class SessionsController < ApplicationController
         if @user && @user.authenticate(strong_params[:password])
             flash[:notice] = "You have successfully logged in"
             session[:user_id] = @User.id
-            reddirect_to root_path
+            redirect_to research_path
         #if user isn't found
         else
+            @user = User.new(email: strong_params[:email])
             flash[:errors] = @user.errors.full_messages
-            @user = User.new(username: strong_params[:username])
             redirect_to root_path
         end
     end

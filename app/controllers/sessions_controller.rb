@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 
         if @user.save
             flash[:notice] = "Safely created User account"
-            sessions[:user_id] = @user.id
+            session[:user_id] = @user.id
             redirect_to research_path
         else 
             flash[:errors] = @user.errors.full_messages

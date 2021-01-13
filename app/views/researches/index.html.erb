@@ -1,0 +1,7 @@
+<h1> Index Page </h1>
+
+<% @research.each do |r|%>
+    <%= r.title %>
+<% end %>
+
+<%= link_to "New Research Information", new_research_path %>

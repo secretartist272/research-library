@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         if @user.save
             flash[:notice] = "Safely created User account"
             session[:user_id] = @user.id
-            redirect_to research_path
+            redirect_to researches_path
         else 
             flash[:errors] = @user.errors.full_messages
             render :signup

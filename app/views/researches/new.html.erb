@@ -1,0 +1,14 @@
+<h1> New Research Information </h1>
+
+
+<%= form_tag "/researches", method :post do %>
+    <div>
+    <% label_tag :title %>
+    <%= text_field_tag :title %>
+    </div>
+    <div>
+    <%= label_tag :description %>
+    <%= text_field_tag :description %>
+    </div>
+    
+<% end %>

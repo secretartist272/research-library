@@ -10,7 +10,7 @@ class ResearchesController < ApplicationController
 
     
     def new
-        @research = Researches.new(research_params)
+        @research = Research.new
         
         if @research.save 
             flash[:notice] = "Your research has been logged successfully!"

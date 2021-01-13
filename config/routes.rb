@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :research_subjects
-  resources :researches
+  resources :research_subjects do
+    resources :researches
+  end
   resources :users, only: [:show, :edit] 
 
-  
+ # Sessions Section 
   #root path
   root 'sessions#home'
   #signups routes
@@ -16,6 +17,12 @@ Rails.application.routes.draw do
 
   #Logout route
   delete '/logout', to: 'sessions#logout'
+
+
+  #Research Subjects
+  get '/research_subjects', to: 'research_subjects#show'
+
+  #Research 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

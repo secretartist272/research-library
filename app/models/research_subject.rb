@@ -1,2 +1,0 @@
-class ResearchSubject < ApplicationRecord
-end

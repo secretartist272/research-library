@@ -1,0 +1,13 @@
+<h1>Create a New Subject</h1>
+
+<%= form_for @subject, url: '/subjects' do |f| %>
+    <%= f.label :genre %>
+    <%= f.text_field :genre %>
+    <br>
+    <%= f.label :subject %>
+    <%= f.text_field :subject %>
+    <br>
+    <%= hidden_field_tag "user_id", @user.id %>
+    <%= hidden_field_tag "research_id", @research.id %>
+    <%= f.submit %>
+<% end %>

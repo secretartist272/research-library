@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :subjects do
-    resources :researches
-  end
+  resources :subjects
+  resources :researches
   resources :users, only: [:show, :edit] 
 
  # Sessions Section 
@@ -18,9 +17,13 @@ Rails.application.routes.draw do
   #Logout route
   delete '/logout', to: 'sessions#logout'
 
+  #User routes:
+    #show route
+    get '/users/:id', to: "users#show"
+
 
   #Subjects
-  get '/subjects', to: 'ubjects#show'
+  get '/subjects', to: 'subjects#show'
 
   #Research 
 

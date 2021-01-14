@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         if @user.save
             flash[:notice] = "Safely created User account"
             session[:user_id] = @user.id
-            redirect_to subjects_path
+            redirect_to user_path
         else 
             flash[:errors] = @user.errors.full_messages
             render :signup
@@ -36,7 +36,7 @@ class SessionsController < ApplicationController
         if @user && @user.authenticate(strong_params[:password])
             flash[:notice] = "You have successfully logged in"
             session[:user_id] = @user.id
-            redirect_to subjects_path
+            redirect_to user_path
         #if user isn't found
         else
             @user = User.new(email: strong_params[:email])

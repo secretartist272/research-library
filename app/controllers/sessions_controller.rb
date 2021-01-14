@@ -36,7 +36,7 @@ class SessionsController < ApplicationController
         if @user && @user.authenticate(strong_params[:password])
             flash[:notice] = "You have successfully logged in"
             session[:user_id] = @user.id
-            @user.name = User.find(name: params[:user][:name])
+            
             redirect_to user_path(@user)
         #if user isn't found
         else

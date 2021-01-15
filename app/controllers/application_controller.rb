@@ -11,5 +11,8 @@ class ApplicationController < ActionController::Base
         !!current_user
    end
 
+   def strong_params
+        params.require(:user).permit(:name, :email, :password, :age)
+   end
     
 end

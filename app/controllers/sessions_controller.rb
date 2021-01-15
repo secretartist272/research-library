@@ -59,8 +59,6 @@ class SessionsController < ApplicationController
 
     private
 
-    def strong_params
-        params.require(:user).permit(:name, :email, :password, :age)
-    end
+    
 
 end

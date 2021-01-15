@@ -1,7 +1,7 @@
 class ResearchesController < ApplicationController
 
     def index
-        @researches = Researches.all 
+        @researches = Research.all.each
     end
 
     def show

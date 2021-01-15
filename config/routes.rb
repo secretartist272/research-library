@@ -29,6 +29,12 @@ Rails.application.routes.draw do
   get '/subjects', to: 'subjects#show'
 
   #Research 
+    #show route
+      get '/researches', to: 'researches#show'
+    
+    #new route
+      get '/researches/new', to: 'researches#new'
+      
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

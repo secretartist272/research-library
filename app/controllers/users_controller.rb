@@ -13,9 +13,9 @@ class UsersController < ApplicationController
     end
 
     def update
-        @user = User.find(params[:id])
+        @user = User.find_by(params[:id])
        # binding.pry
-        if @user.update(params[:user][:id])
+        if @user.update_attributes(strong_params)
             # Handle a successful update.
              redirect_to user_path(@user) 
               

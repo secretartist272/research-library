@@ -16,11 +16,13 @@ class UsersController < ApplicationController
         @user = User.find_by(params[:id])
        # binding.pry
         if @user.update_attributes(strong_params)
+            flash[:notice] = "You have successfully updated your information!"
             # Handle a successful update.
              redirect_to user_path(@user) 
               
         else
-              render 'edit'
+            flash[:errors] = @user.errors.full_messages
+            render 'edit'
         end
     end
 

@@ -7,12 +7,10 @@ class SessionsController < ApplicationController
     #create user
     def create
         @user = User.new(strong_params)
-
-
         if @user.save
             flash[:notice] = "Safely created User account"
             session[:user_id] = @user.id
-            redirect_to user_path
+            redirect_to user_path(@user)
         else 
             flash[:errors] = @user.errors.full_messages
             render :signup
@@ -59,6 +57,9 @@ class SessionsController < ApplicationController
 
     private
 
+    def strong_params
+        params.require(:user).permit(:name, :email, :password, :age)
+    end
     
 
 end

@@ -1,7 +1,7 @@
 <h1> Index Page </h1>
 
 <% @researches.each do |r|%>
-    <ol> <%= r.title %> </ol>
+    <ol><a href="/researches/<%= r.id %>"> <%= r.title %></a> </ol>
 <% end %>
 
 <%= link_to "New Research Information", new_research_path %>

@@ -20,8 +20,7 @@ ActiveRecord::Schema.define(version: 2021_01_13_200835) do
   end
 
   create_table "subjects", force: :cascade do |t|
-    t.string "subject"
-    t.string "genre"
+    t.string "field_of_Study"
     t.integer "user_id"
     t.integer "research_id"
     t.datetime "created_at", precision: 6, null: false

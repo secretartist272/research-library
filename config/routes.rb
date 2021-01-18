@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     patch '/users/:id', to: "users#update"
 
     #delete user
-    delete '/user/:id', to: 'users#delete'
+    delete '/user/:id', to: 'users#destroy'
 
   #Subjects
   get '/subjects', to: 'subjects#show'

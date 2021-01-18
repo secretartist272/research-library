@@ -26,16 +26,22 @@ class UsersController < ApplicationController
         end
     end
 
-    def delete
+    def destroy
         if logged_in?
             @user = User.find_by_id(params[:id])
             if @user == current_user
-              @user.delete
+              @user.destroy!
               redirect_to root
             else
               redirect '/login'
             end
         end
+    end
+
+    private
+
+    def strong_params
+        params.require(:user).permit(:name, :email, :password, :age)
     end
 
 

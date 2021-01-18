@@ -25,6 +25,9 @@ Rails.application.routes.draw do
     get '/user/:id/edit', to: 'users#edit'
     patch '/users/:id', to: "users#update"
 
+    #delete user
+    delete '/user/:id', to: 'users#delete'
+
   #Subjects
   get '/subjects', to: 'subjects#show'
 

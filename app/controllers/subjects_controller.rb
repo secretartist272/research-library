@@ -4,7 +4,7 @@ class SubjectsController < ApplicationController
     end
 
     def show
-
+        @subject = Subject.find_by_id(params[:id])
     end
 
     def new
@@ -16,7 +16,7 @@ class SubjectsController < ApplicationController
         
         
         if @subject.save
-            redirect_to subject_path
+            redirect_to subject_path(@subject)
         else
             render :new
         end
@@ -25,6 +25,6 @@ class SubjectsController < ApplicationController
     private
 
     def subject_params
-        params.require(:subject).permit(:genre, :subject, :user_id, :research_id)
+        params.require(:subject).permit(:field_of_study, :user_id, :research_id)
     end
 end

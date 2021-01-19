@@ -13,7 +13,8 @@ class SubjectsController < ApplicationController
 
     def create 
         @subject = Subject.new(subject_params)
-        
+        @user.id = User.find(params[:id])
+        @research.id = Research.find(params[:id])
         
         if @subject.save
             redirect_to subject_path(@subject)

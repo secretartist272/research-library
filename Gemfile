@@ -26,7 +26,8 @@ gem 'pry'
 # gem 'image_processing', '~> 1.2'
 #Use omniauth
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-github'
+gem 'dotenv-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

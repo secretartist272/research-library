@@ -10,4 +10,15 @@ class User < ApplicationRecord
     #has_many and belongs_to
     has_many :research, through: :subjects
     has_many :subjects
+
+    #method
+    def self.from_omniauth(auth)
+        where(email: auth.info.email).first_or_initialize do |user|
+            binding.pry
+          user.user_name = auth.info.name
+          user.user_age = auth.info.age
+          user.email = auth.info.email
+          user.password = SecureRandom.hex
+        end
+    end
 end

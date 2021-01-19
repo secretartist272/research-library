@@ -27,6 +27,12 @@ Rails.application.routes.draw do
 
     #delete user
     delete '/user/:id', to: 'users#destroy'
+    
+    #omniauth routes
+
+    match '/auth/:provider/callback', to: 'sessions#omniauth', via: [:get, :post]
+
+
 
   #Subjects
   get '/subjects', to: 'subjects#show'
@@ -37,6 +43,8 @@ Rails.application.routes.draw do
     
     #new route
       get '/researches/new', to: 'researches#new'
+
+
       
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

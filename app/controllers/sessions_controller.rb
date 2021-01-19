@@ -55,11 +55,21 @@ class SessionsController < ApplicationController
         redirect_to root_path
     end
 
+    def omniauth
+        @user = User.from_omniauth(auth)
+        @user.save
+        session[:user_id] = @user.id
+        redirect_to home_path
+    end
+
     private
 
     def strong_params
         params.require(:user).permit(:name, :email, :password, :age)
     end
     
+    def auth
+        request.env['omniauth.auth']
+    end
 
 end

@@ -1,4 +1,8 @@
     <h1><%= @research.title %></h1>
     <p><%= @research.description %></p>
 
+    <%= link_to "Edit Research", edit_research_path %>
+    <br>
+    <%= link_to "All Research", researches_path %>
+    <br>
     <%= link_to "Add Subject to Research ", new_subject_path %>

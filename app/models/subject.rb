@@ -1,6 +1,9 @@
 class Subject < ApplicationRecord
-    validates :genre, uniqueness: true, presence: true
-    validates :subject, presence: true
+    #validations
+    validates :field_of_Study, uniqueness: true, presence: true
+    
+
+    #belongs to
     belongs_to :user
     belongs_to :research
 

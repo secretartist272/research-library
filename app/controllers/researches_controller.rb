@@ -27,6 +27,21 @@ class ResearchesController < ApplicationController
         end
     end
 
+    def edit
+        @research = Research.find_by(params[:id])
+    end
+
+    def update
+        @research = Research.find_by(params[:id])
+
+        if @research.save
+            redirect_to research_path(@research)
+        else
+            redirect_to edit_research_path
+        end
+    end
+
+
     private
 
     def research_params

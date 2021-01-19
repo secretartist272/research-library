@@ -1,10 +1,10 @@
 <h1>Create a New Subject</h1>
 
 <%= form_for @subject, url: '/subjects' do |f| %>
-    <%= f.label :genre %>
-    <%= f.text_field :genre %>
+    <%= f.label :field_of_study %>
+    <%= f.text_field :field_of_Study %>
     <br>
-    <%= f.label :subject %>
-    <%= f.text_field :subject %>
+    <%= f.hidden_field :research_id, value: @research.id %>
+    <%= f.hidden_field :user_id, value: @user.id %>
     <%= f.submit %>
 <% end %>

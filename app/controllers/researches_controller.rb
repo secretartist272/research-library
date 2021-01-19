@@ -10,10 +10,7 @@ class ResearchesController < ApplicationController
 
     
     def new
-        @research = Research.new
-        
-        
-        
+        @research = Research.new   
     end
 
     def create
@@ -34,7 +31,8 @@ class ResearchesController < ApplicationController
     def update
         @research = Research.find_by(params[:id])
 
-        if @research.save
+        if @research.update!(research_params)
+            
             redirect_to research_path(@research)
         else
             redirect_to edit_research_path

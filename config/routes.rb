@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :subjects
-  resources :researches
+  resources :researches do 
+    resources :subjects
+  end 
+
   resources :users, only: [:show, :edit] 
 
  # Sessions Section 
@@ -29,7 +31,7 @@ Rails.application.routes.draw do
     delete '/user/:id', to: 'users#destroy'
     
     #omniauth routes
-
+    get "/auth/github", to: 'sessions#omniauth'
     match '/auth/:provider/callback', to: 'sessions#omniauth', via: [:get, :post]
 
 

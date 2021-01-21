@@ -28,10 +28,10 @@ Rails.application.routes.draw do
     patch '/users/:id', to: "users#update"
 
     #delete user
-    delete '/user/:id', to: 'users#destroy'
+    delete '/users/:id', to: 'users#destroy'
     
     #omniauth routes
-    get "/auth/github", to: 'sessions#omniauth'
+    #get "/auth/github", to: 'sessions#omniauth'
     match '/auth/:provider/callback', to: 'sessions#omniauth', via: [:get, :post]
 
 

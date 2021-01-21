@@ -1,7 +1,9 @@
 <h1> Index Page </h1>
 
 <% @subjects.each do |s|%>
-    <ol><%= s.field_of_Study %></ol>
+    <ol><a href="/researches/<%= s.research_id%>/subjects/<%= s.id %>" > <%= s.field_of_Study %></a></ol>
 <% end %>
 
 <%= link_to "New Subject", new_research_subject_path %>
+<br>
+<%=link_to "Homepage", root_path %>

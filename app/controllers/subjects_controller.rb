@@ -26,7 +26,13 @@ class SubjectsController < ApplicationController
     end
 
     def destroy
-
+        @subject = Subject.find(params[:id])
+        if @subject.destroy!
+            
+            redirect_to research_path
+        else
+            redirect_to research_subject_path(@research, @subject)
+        end
     end
 
     private

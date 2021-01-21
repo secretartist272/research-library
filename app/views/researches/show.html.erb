@@ -2,6 +2,8 @@
     <p><%= @research.description %></p>
 
     <%= link_to "Edit Research", edit_research_path %>
+    <br> 
+    <%= link_to "Delete Research", @researches, method: "delete" %>
     <br>
     <%= link_to "All Research", researches_path %>
     <br>

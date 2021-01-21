@@ -39,6 +39,15 @@ class ResearchesController < ApplicationController
         end
     end
 
+    def destroy
+        @research = Research.find(params[:id])
+        if @research.destroy!
+            redirect_to researches_path
+        else
+            redirect_to researches_path(@research)
+        end
+    end
+
 
     private
 

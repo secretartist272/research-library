@@ -27,14 +27,12 @@ class UsersController < ApplicationController
     end
 
     def destroy
-        if logged_in?
-            @user = User.find_by_id(params[:id])
-            if @user == current_user
-              @user.destroy!
-              redirect_to root
-            else
-              redirect '/login'
-            end
+        @user = current_user
+        if @user == current_user
+            @user.destroy!
+            redirect_to root_path
+        else
+            redirect_to user_path(@user)
         end
     end
 

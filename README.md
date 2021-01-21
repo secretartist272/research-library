@@ -22,4 +22,5 @@ run rails server through terminal:
 Then type http:local/host:3000 in web browser.
 
 ## MIT LICENSE
+[MIT]
 (https://choosealicense.com/licenses/mit/)

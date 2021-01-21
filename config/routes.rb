@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :researches do 
-    resources :subjects
+    resources :subjects, only: [:show, :create, :update, :index, :new, :edit, :destroy]
   end 
 
   resources :users, only: [:show, :edit] 
@@ -39,12 +39,20 @@ Rails.application.routes.draw do
   #Subjects
   get '/subjects', to: 'subjects#show'
 
+  #delete subject
+    delete 'researches/:research_id/users/:id', to: 'subjects#destroy'
+
   #Research 
     #show route
       get '/researches', to: 'researches#show'
     
     #new route
       get '/researches/new', to: 'researches#new'
+
+    #destroy route
+    delete '/researches/:id', to: 'researches#destroy'
+    
+    
 
 
       

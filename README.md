@@ -1,24 +1,25 @@
-# README
+# RESEARCH_LIBRARY README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Research library is a Rails library written with ruby dealing with creating a  user who can create both a research documents and a field of study for a research document. 
 
 Things you may want to cover:
 
-* Ruby version
+## Ruby version
+    version 2.6.1
 
-* System dependencies
+## System dependencies
+From your terminal run:
+    ''git clone git@github.com:secretartist272/research-library.git''
+Then:
+## Database creation
 
-* Configuration
+## Database initialization
+Run through terminal:
+    ''rails db:migrate
+## How to run the test suite
+run rails server through terminal:
+    ''rails s''
+Then type http:local/host:3000 in web browser.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## MIT LICENSE
+(https://choosealicense.com/licenses/mit/)
